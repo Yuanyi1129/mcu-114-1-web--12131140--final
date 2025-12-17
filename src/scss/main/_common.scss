@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-main;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  padding-top: $header-height;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding-x;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section__title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 32px;
+  color: var(--header-color);
+}
+
+/* 按鈕基本樣式 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-weight: 500;
+}
+
+.btn--primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  box-shadow: var(--shadow-md);
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(19, 127, 236, 0.4);
+  }
+}
+
+.btn--ghost {
+  background-color: transparent;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+
+  &:hover {
+    background-color: rgba(19, 127, 236, 0.08);
+  }
+}
+
+.btn--download {
+  background-color: var(--second-color);
+  color: #1f2933;
+  font-size: 13px;
+  padding-inline: 16px;
+  box-shadow: var(--shadow-md);
+
+  &:hover {
+    background-color: #fbbf24;
+    transform: translateY(-1px);
+  }
+}
