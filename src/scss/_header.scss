@@ -1,0 +1,117 @@
+@import "./variable";
+@import "./color";
+
+.site-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .header__logo {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-decoration: none;
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  .nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.35rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background: var(--text-color);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .nav__list {
+    list-style: none;
+    display: flex;
+    gap: $spacing-lg;
+  }
+
+  .nav__item {
+    position: relative;
+  }
+
+  .nav__link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+
+    &:hover,
+    &.is-active {
+      color: var(--primary-color);
+      border-bottom-color: var(--primary-color);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav__toggle {
+      display: flex;
+    }
+
+    .nav__list {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: $spacing-md;
+      margin-top: $spacing-sm;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+
+      &.is-active {
+        max-height: 400px;
+      }
+    }
+
+    .nav__item {
+      padding: $spacing-sm 0;
+    }
+  }
+}

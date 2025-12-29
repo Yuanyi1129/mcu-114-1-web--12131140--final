@@ -1,0 +1,137 @@
+@import "./variable";
+@import "./color";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Container
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+}
+
+// Section
+.section {
+  padding: $spacing-2xl 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &--home {
+    background: linear-gradient(
+      135deg,
+      var(--background-color) 0%,
+      rgba(99, 102, 241, 0.05) 100%
+    );
+  }
+
+  &--about {
+    background-color: var(--background-color);
+  }
+
+  &--skills {
+    background: rgba(99, 102, 241, 0.02);
+  }
+
+  &--projects {
+    background-color: var(--background-color);
+  }
+}
+
+.section__title {
+  font-size: $font-size-3xl;
+  font-weight: 700;
+  margin-bottom: $spacing-2xl;
+  text-align: center;
+  position: relative;
+  padding-bottom: $spacing-lg;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    border-radius: 2px;
+  }
+}
+
+// Button
+.btn {
+  display: inline-block;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: $font-size-base;
+
+  &--primary {
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    color: $white;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+
+    &:hover {
+      background: var(--primary-color);
+      color: $white;
+    }
+  }
+
+  &--download {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+    }
+  }
+}

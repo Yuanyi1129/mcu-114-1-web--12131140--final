@@ -1,0 +1,17 @@
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --dark-bg: #{$dark-bg};
+  --light-bg: #{$light-bg};
+  --text-dark: #{$text-dark};
+  --text-light: #{$text-light};
+  --border-color: #{$border-color};
+  --white: #{$white};
+  --background-color: #{$light-bg};
+  --text-color: #{$text-dark};
+}
+
+body.dark-mode {
+  --background-color: #{$dark-bg};
+  --text-color: #{$white};
+}
